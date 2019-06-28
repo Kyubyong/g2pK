@@ -1,0 +1,3 @@
+include g2pk/rules.txt
+include g2pk/idioms.txt
+include g2pk/table.csv
