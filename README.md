@@ -1,3 +1,7 @@
+[![image](https://img.shields.io/pypi/v/g2pk.svg)](https://pypi.org/project/g2pk/)
+[![image](https://img.shields.io/pypi/l/g2pk.svg)](https://pypi.org/project/g2pk/)
+[![image](https://img.shields.io/pypi/pyversions/g2pk.svg)](https://pypi.org/project/g2pk/)
+
 # g2pK: g2p module for Korean
 
 g2p means a task that converts graphemes to phonemes. Hangul, the main script for Korean, is phonetic, but the pronunciation rules are notoriously complicated.
