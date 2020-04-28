@@ -118,7 +118,7 @@ This is possible due to [cmu pronouncing dictionary](http://www.speech.cs.cmu.ed
 If you use our software for research, please cite:
 
 ```
-@misc{gp2K2019,
+@misc{park2019g2pk,
   author = {Park, Kyubyong},
   title = {g2pK},
   year = {2019},
