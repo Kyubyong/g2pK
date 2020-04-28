@@ -26,7 +26,7 @@ pip install g2pk
 ## Main features & Usage
 * Returns text as it is pronounced, keeping punctuations.
 ```
->>> from g2p import G2p
+>>> from g2pk import G2p
 >>> g2p = G2p()
 >>> g2p("어제는 날씨가 맑았는데, 오늘은 흐리다.")
 어제는 날씨가 말간는데, 오느른 흐리다.
