@@ -24,13 +24,25 @@ from g2pk.numerals import convert_num
 
 
 class G2p(object):
-    def __init__(self):
-        self.mecab = Mecab() # for annotation
+    def __init__(self, dict_path=''):
+        self.mecab = self.get_mecab(dict_path)
         self.table = parse_table()
 
         self.cmu = cmudict.dict() # for English
 
         self.rule2text = get_rule_id2text() # for comments of main rules
+
+    def get_mecab(self, dict_path):
+        try:
+            if dict_path:
+                return Mecab(dict_path) # for annotation
+            else:
+                return Mecab()
+        except Exception as e:
+            message = f'{str(e)}\n You should checkout dictionary path. \
+            If you want to install mecab, The command is..\
+            bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)'
+            raise Exception(message)
 
     def idioms(self, string, descriptive=False, verbose=False):
         '''Process each line in `idioms.txt`
