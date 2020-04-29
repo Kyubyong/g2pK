@@ -31,6 +31,7 @@ class G2p(object):
         self.cmu = cmudict.dict() # for English
 
         self.rule2text = get_rule_id2text() # for comments of main rules
+        self.idioms_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "idioms.txt")
 
     def get_mecab(self, dict_path):
         try:
@@ -58,7 +59,7 @@ class G2p(object):
         rule = "from idioms.txt"
         out = string
 
-        for line in open(os.path.dirname(os.path.abspath(__file__)) + "idioms.txt", 'r', encoding="utf8"):
+        for line in open(self.idioms_path, 'r', encoding="utf8"):
             line = line.split("#")[0].strip()
             if "===" in line:
                 str1, str2 = line.split("===")
