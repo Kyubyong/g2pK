@@ -40,10 +40,9 @@ class G2p(object):
             else:
                 return Mecab()
         except Exception as e:
-            message = f'{str(e)}\n You should checkout dictionary path. \
-            If you want to install mecab, The command is..\
-            bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)'
-            raise Exception(message)
+            raise Exception(
+                'If you want to install mecab, The command is.. bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)'
+            )
 
     def idioms(self, string, descriptive=False, verbose=False):
         '''Process each line in `idioms.txt`
