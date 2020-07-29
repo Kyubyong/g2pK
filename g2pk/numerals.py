@@ -38,7 +38,8 @@ def process_num(num, sino=True):
     digit2dec = {d: dec for d, dec in zip(digits, decimals.split())}
 
     spelledout = []
-    for i, digit in enumerate(num[::-1]):
+    for i, digit in enumerate(num):
+        i = len(num) - i - 1
         if sino:
             if i == 0:
                 name = digit2name.get(digit, "")
@@ -47,9 +48,18 @@ def process_num(num, sino=True):
                 name = name.replace("일십", "십")
         else:
             if i == 0:
-                name = digit2mod[digit]
+                name = digit2mod.get(digit, "")
             elif i == 1:
-                name = digit2dec[digit]
+                name = digit2dec.get(digit, "")
+        if digit == '0':
+            if i % 4 == 0:
+                last_three = spelledout[-min(3, len(spelledout)):]
+                if "".join(last_three) == "":
+                    spelledout.append("")
+                    continue
+            else:
+                spelledout.append("")
+                continue
         if i == 2:
             name = digit2name.get(digit, "") + "백"
             name = name.replace("일백", "백")
@@ -70,8 +80,6 @@ def process_num(num, sino=True):
             name = name.replace("일천", "천")
         elif i == 8:
             name = digit2name.get(digit, "") + "억"
-        elif i == 8:
-            name = digit2name.get(digit, "") + "억"
         elif i == 9:
             name = digit2name.get(digit, "") + "십"
         elif i == 10:
@@ -88,7 +96,7 @@ def process_num(num, sino=True):
             name = digit2name.get(digit, "") + "천"
         spelledout.append(name)
 
-    return "".join(elem for elem in spelledout[::-1])
+    return "".join(elem for elem in spelledout)
 
 
 def convert_num(string):
