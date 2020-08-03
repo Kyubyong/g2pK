@@ -6,8 +6,8 @@ https://github.com/kyubyong/g2pK
 import os, re
 
 import nltk
+import mecab
 from jamo import h2j
-from konlpy.tag import Mecab
 from nltk.corpus import cmudict
 
 # For further info. about cmu dict, consult http://www.speech.cs.cmu.edu/cgi-bin/cmudict.
@@ -24,8 +24,8 @@ from g2pk.numerals import convert_num
 
 
 class G2p(object):
-    def __init__(self, dict_path=''):
-        self.mecab = self.get_mecab(dict_path)
+    def __init__(self):
+        self.mecab = self.get_mecab()
         self.table = parse_table()
 
         self.cmu = cmudict.dict() # for English
@@ -33,15 +33,12 @@ class G2p(object):
         self.rule2text = get_rule_id2text() # for comments of main rules
         self.idioms_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "idioms.txt")
 
-    def get_mecab(self, dict_path):
+    def get_mecab(self):
         try:
-            if dict_path:
-                return Mecab(dict_path) # for annotation
-            else:
-                return Mecab()
+            return mecab.MeCab()
         except Exception as e:
             raise Exception(
-                'If you want to install mecab, The command is.. bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)'
+                'If you want to install mecab, The command is... pip install python-mecab-ko'
             )
 
     def idioms(self, string, descriptive=False, verbose=False):

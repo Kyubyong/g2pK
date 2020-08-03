@@ -7,7 +7,7 @@ REQUIRED_PACKAGES = [
     'jamo',
     'nltk',
     'konlpy',
-    'mecab'
+    'python-mecab-ko',
 ]
 
 setuptools.setup(

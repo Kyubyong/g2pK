@@ -14,7 +14,7 @@ That's one of the reasons your contributions are more than welcome.
 ## Requirements
 * python >= 3.6
 * jamo
-* Mecab (Consult http://konlpy.org/en/latest/install/ for installation)
+* [python-mecab-ko](https://github.com/jonghwanhyeon/python-mecab-ko)
 * konlpy
 * nltk
 
