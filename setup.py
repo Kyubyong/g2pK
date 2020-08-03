@@ -12,7 +12,7 @@ REQUIRED_PACKAGES = [
 
 setuptools.setup(
     name="g2pK",
-    version="0.9.2",
+    version="0.9.3",
     author="Kyubyong Park",
     author_email="kbpark.linguist@gmail.com",
     description="g2pK: g2p module for Korean",
