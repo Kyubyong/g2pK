@@ -15,7 +15,6 @@ That's one of the reasons your contributions are more than welcome.
 * python >= 3.6
 * jamo
 * [python-mecab-ko](https://github.com/jonghwanhyeon/python-mecab-ko)
-* konlpy
 * nltk
 
 ## Installation
