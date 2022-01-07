@@ -6,13 +6,12 @@ with open("README.md", mode="r", encoding="utf-8") as fh:
 REQUIRED_PACKAGES = [
     'jamo',
     'nltk',
-    'konlpy',
     'python-mecab-ko',
 ]
 
 setuptools.setup(
     name="g2pK",
-    version="0.9.3",
+    version="0.9.5",
     author="Kyubyong Park",
     author_email="kbpark.linguist@gmail.com",
     description="g2pK: g2p module for Korean",
